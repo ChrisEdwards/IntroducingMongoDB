@@ -1,0 +1,8 @@
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\bin\Debug\NoRMDriverDemo.exe
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\bin\Debug\NoRMDriverDemo.pdb
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\bin\Debug\Norm.dll
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\bin\Debug\Norm.pdb
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\bin\Debug\Norm.xml
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\obj\Debug\NoRMDriverDemo.exe
+C:\Projects\IntroducingMongoDB\src\NoRMDriverDemo\obj\Debug\NoRMDriverDemo.pdb
