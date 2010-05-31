@@ -3,39 +3,46 @@
     <string />
     <integer />
     <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Order.cs" caret="0" fromTop="0" />
-      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="964" fromTop="17" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="893" fromTop="13" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Order.cs" caret="96" fromTop="7" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="1970" fromTop="12" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="21" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="21" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="14" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="11" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="8" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="18" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="12" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="5" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="22" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="22" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="17" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="12" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="15" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="26" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="16" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="19" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="21" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5473" fromTop="29" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="1386" fromTop="7" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="4906" fromTop="15" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5466" fromTop="29" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="5078" fromTop="19" />
-      <File id="A3B4E04B-0E2A-40E6-8B92-1634721CE78A/f:Program.cs" caret="913" fromTop="14" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="4261" fromTop="53" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="4517" fromTop="32" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="5327" fromTop="46" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="5119" fromTop="38" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="5639" fromTop="38" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="6300" fromTop="58" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="5975" fromTop="23" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="6798" fromTop="46" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="6551" fromTop="41" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="6300" fromTop="19" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="8387" fromTop="53" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="8005" fromTop="19" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="124" fromTop="4" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="746" fromTop="30" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="238" fromTop="13" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="413" fromTop="24" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="7654" fromTop="9" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="7191" fromTop="13" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="7818" fromTop="45" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="8316" fromTop="31" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="539" fromTop="8" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="7384" fromTop="10" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="6925" fromTop="11" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="1145" fromTop="19" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="1419" fromTop="3" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="2375" fromTop="15" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="2383" fromTop="15" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="2487" fromTop="10" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="2798" fromTop="17" />
+      <File id="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14/f:Program.cs" caret="1970" fromTop="12" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -50,21 +57,42 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="orders" priority="6" />
-      <Item value="new" priority="4" />
-      <Item value="Document" priority="2" />
-      <Item value="Console`0" priority="5" />
+      <Item value="orders" priority="7" />
+      <Item value="new" priority="14" />
+      <Item value="Document" priority="3" />
+      <Item value="Console`0" priority="9" />
       <Item value="string" priority="0" />
-      <Item value="var" priority="1" />
+      <Item value="var" priority="6" />
       <Item value="IndexOrder`0" priority="0" />
       <Item value="Document`0" priority="1" />
       <Item value="order1" priority="0" />
       <Item value="order2" priority="0" />
       <Item value="orderList" priority="0" />
       <Item value="IEnumerable" priority="0" />
-      <Item value="selector" priority="1" />
+      <Item value="selector" priority="2" />
       <Item value="docToUpdate" priority="2" />
       <Item value="QueryUsingLinq`0" priority="0" />
+      <Item value="Order`0" priority="4" />
+      <Item value="collection" priority="8" />
+      <Item value="orderToUpdate" priority="2" />
+      <Item value="o" priority="0" />
+      <Item value="Norm" priority="0" />
+      <Item value="Linq" priority="0" />
+      <Item value="MongoQueryProvider`0" priority="0" />
+      <Item value="MongoQuery" priority="1" />
+      <Item value="provider" priority="0" />
+      <Item value="doc" priority="0" />
+      <Item value="orderQueryable" priority="0" />
+      <Item value="Q`0" priority="3" />
+      <Item value="foreach" priority="0" />
+      <Item value="order" priority="0" />
+      <Item value="ordersWithAmountGreaterThanOEqualTo50" priority="0" />
+      <Item value="ordersWithAmountLessThan50" priority="0" />
+      <Item value="ordersWithAmountLessThanOEqualTo50" priority="0" />
+      <Item value="NoRMDriverDemo" priority="0" />
+      <Item value="TimedLock`0" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="ordersWithAmountBetween50And200" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:MongoDB.Driver.IMongoCollection">
       <Item value="Delete`0" priority="1" />
@@ -74,7 +102,7 @@
       <Item value="Update`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
-      <Item value="WriteLine`0" priority="4" />
+      <Item value="WriteLine`0" priority="8" />
       <Item value="Write`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
@@ -82,6 +110,29 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:MongoDB.Driver.Document">
       <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Norm.Collections.MongoCollection`1">
+      <Item value="FindOne`1" priority="0" />
+      <Item value="Save`0" priority="1" />
+      <Item value="Delete`0" priority="0" />
+      <Item value="Update`1" priority="0" />
+      <Item value="Find`2" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NoRMDriverDemo.Order">
+      <Item value="OrderAmount" priority="2" />
+      <Item value="CustomerName" priority="0" />
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Norm.Commands.Modifiers.IModifierExpression`1">
+      <Item value="Increment`0" priority="0" />
+      <Item value="SetValue`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Norm.Q">
+      <Item value="GreaterThan`0" priority="1" />
+      <Item value="GreaterOrEqual`0" priority="0" />
+      <Item value="LessThan`0" priority="1" />
+      <Item value="LessOrEqual`0" priority="0" />
+      <Item value="All`1" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

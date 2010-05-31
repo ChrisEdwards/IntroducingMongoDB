@@ -164,7 +164,7 @@
             Linq extensions.
             </summary>
         </member>
-        <member name="M:Norm.Linq.LinqExtensions.GetConstantValue(System.Linq.Expressions.Expression)">
+        <member name="M:Norm.Linq.LinqExtensions.GetConstantValue``1(System.Linq.Expressions.Expression)">
             <summary>
             Gets the constant value.
             </summary>
@@ -189,12 +189,19 @@
             <param name="direction">Ascending or descending.</param>
             <returns></returns>
         </member>
-        <member name="M:Norm.Linq.LinqExtensions.EscapeDoubleQuotes(System.String)">
+        <member name="M:Norm.Linq.LinqExtensions.EscapeJavaScriptString(System.String)">
             <summary>
             Escapes the double quotes.
             </summary>
             <param name="str">The string</param>
             <returns>The escaped string.</returns>
+        </member>
+        <member name="M:Norm.Linq.LinqExtensions.AsExpando(Norm.BSON.QualifierCommand)">
+            <summary>
+            Converts a QualifierCommand into an Expando object
+            </summary>
+            <param name="qualifier"></param>
+            <returns>Qualifer Command as Expando object</returns>
         </member>
         <member name="T:Norm.Protocol.Message">
             <summary>
@@ -426,6 +433,16 @@
             The mongo query provider.
             </summary>
         </member>
+        <member name="T:Norm.Linq.IMongoQueryResults">
+            <summary>
+            MongoQueryResults
+            </summary>
+        </member>
+        <member name="P:Norm.Linq.IMongoQueryResults.TranslationResults">
+            <summary>
+            Returns the translation results from a linq query
+            </summary>
+        </member>
         <member name="M:Norm.Linq.MongoQueryProvider.#ctor(Norm.Mongo)">
             <summary>
             Initializes a new instance of the <see cref="T:Norm.Linq.MongoQueryProvider"/> class.
@@ -470,20 +487,17 @@
         </member>
         <member name="M:Norm.Linq.MongoQueryProvider.ExecuteQuery``1(System.Linq.Expressions.Expression)">
             <summary>
+            Executes the Linq expression
             </summary>
             <param name="expression">An expression tree that represents a LINQ query.</param>
             <returns>The execute.</returns>
         </member>
-        <member name="M:Norm.Linq.MongoQueryProvider.ExecuteMR``1(System.String,System.String,System.String,System.String)">
+        <member name="M:Norm.Linq.MongoQueryProvider.Execute(System.Linq.Expressions.Expression)">
             <summary>
-            Actual execution of the MapReduce stuff (thanks Karl!)
+            Executes the Linq expression
             </summary>
-            <typeparam name="T">Type to map and reduce</typeparam>
-            <param name="typeName">Name of the type.</param>
-            <param name="map">The map.</param>
-            <param name="reduce">The reduce.</param>
-            <param name="finalize">The finalize.</param>
-            <returns></returns>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <returns>The execute.</returns>
         </member>
         <member name="P:Norm.Linq.MongoQueryProvider.DB">
             <summary>
@@ -509,6 +523,11 @@
         <member name="P:Norm.Linq.MapReduceResult`1.Value">
             <summary>
             Gets or sets Value.
+            </summary>
+        </member>
+        <member name="T:Norm.Linq.MapReduceParameters">
+            <summary>
+            Javascript functions used to perform a map/reduce
             </summary>
         </member>
         <member name="T:Norm.QueuedConnectionProvider">
@@ -837,7 +856,7 @@
         <member name="M:Norm.BSON.QualifierCommand.#ctor(System.String,System.Object)">
             <summary>TODO::Description.</summary>
         </member>
-        <member name="M:Norm.Commands.Qualifiers.GreaterOrEqualQualifier.#ctor(System.Double)">
+        <member name="M:Norm.Commands.Qualifiers.GreaterOrEqualQualifier.#ctor(System.Object)">
             <summary>
             Initializes a new instance of the <see cref="T:Norm.Commands.Qualifiers.GreaterOrEqualQualifier"/> class.
             </summary>
@@ -1269,12 +1288,30 @@
             <param name="value">The value.</param>
             <returns>The try get.</returns>
         </member>
+        <member name="M:Norm.BSON.Expando.Merge(Norm.BSON.Expando)">
+            <summary>
+            Merges one Expando with the current Expando
+            </summary>
+            <param name="expando">The Expando to be merged</param>
+            <returns>The current expando instance</returns>
+        </member>
         <member name="P:Norm.BSON.Expando.Item(System.String)">
             <summary>
             Get or set a property of this flyweight.
             </summary>
             <param name="propertyName">property name</param>
             <returns></returns>
+        </member>
+        <member name="T:Norm.Commands.Qualifiers.ExistsQualifier">
+            <summary>
+            The exists quallifier.
+            </summary>
+        </member>
+        <member name="M:Norm.Commands.Qualifiers.ExistsQualifier.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Norm.Commands.Qualifiers.ExistsQualifier"/> class.
+            </summary>
+            <param name="doesExist">The does exist.</param>
         </member>
         <member name="T:Norm.BSON.BsonSerializer">
             <summary>
@@ -2387,7 +2424,7 @@
             The greater than qualifier.
             </summary>
         </member>
-        <member name="M:Norm.Commands.Qualifiers.GreaterThanQualifier.#ctor(System.Double)">
+        <member name="M:Norm.Commands.Qualifiers.GreaterThanQualifier.#ctor(System.Object)">
             <summary>
             Initializes a new instance of the <see cref="T:Norm.Commands.Qualifiers.GreaterThanQualifier"/> class.
             </summary>
@@ -2709,14 +2746,37 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Norm.Collections.MongoCollection`1.CreateIndex(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String,System.Boolean,Norm.Protocol.Messages.IndexOption)">
+        <member name="M:Norm.Collections.MongoCollection`1.CreateIndex(Norm.BSON.Expando,System.String,System.Boolean)">
             <summary>
-            Creates an index for a given collection.
+            Asynchronously creates an index on this collection.
+            It is highly recommended that you use the overload of this method that accepts an expression unless you need the granularity that this method provides.
             </summary>
-            <param name="index">The property to index.</param>
-            <param name="indexName">The index Name.</param>
-            <param name="isUnique">Unique index flag.</param>
-            <param name="direction">Ascending or descending.</param>
+            <param name="key">The document properties that participate in this index. Each property of "key" should be 
+            set to either "IndexOption.Ascending" or "IndexOption.Descending", the properties can be deep aliases, like "Suppiler.Name",
+            but remember that this will make no effort to check that what you put in for values match the MongoConfiguration.</param>
+            <param name="indexName">The name of the index as it should appear in the special "system.indexes" child collection.</param>
+            <param name="isUnique">True if MongoDB can expect that each document will have a unique combination for this key. 
+            MongoDB will potentially optimize the index based on this being true.</param>
+        </member>
+        <member name="M:Norm.Collections.MongoCollection`1.CreateIndex``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String,System.Boolean,Norm.Protocol.Messages.IndexOption)">
+            <summary>
+            Asynchronously creates an index on this collection.
+            </summary>
+            <param name="index">This is an expression of the elements in the type you wish to index, so you can do something like:
+            <code>
+            y=>y.MyIndexedProperty
+            </code>
+            or, if you have a multi-key index, you can do this:
+            <code>
+            y=> new { y.PropertyA, y.PropertyB.Property1, y.PropertyC }
+            </code>
+            This will automatically map the MongoConfiguration aliases.
+            </param>
+            <param name="indexName">The name of the index as it should appear in the special "system.indexes" child collection.</param>
+            <param name="isUnique">True if MongoDB can expect that each document will have a unique combination for this key. 
+            MongoDB will potentially optimize the index based on this being true.</param>
+            <param name="direction">Should all of the elements in the index be sorted Ascending, or Decending, if you need to sort each property differently, 
+            you should use the Expando overload of this method for greater granularity.</param>
         </member>
         <member name="M:Norm.Collections.MongoCollection`1.Distinct``1(System.String)">
             <summary>
@@ -2857,13 +2917,6 @@
             Tries the setting id property.
             </summary>
             <param name="entities">The entities.</param>
-        </member>
-        <member name="M:Norm.Collections.MongoCollection`1.CanUpdateWithoutId(System.Type)">
-            <summary>
-            Checks whether type implements IUpdateWithoutId.
-            </summary>
-            <param name="type">The type to check.</param>
-            <returns>True if implemented; otherwise false.</returns>
         </member>
         <member name="P:Norm.Collections.MongoCollection`1.Updateable">
             <summary>
@@ -3462,17 +3515,6 @@
             The value.
             </param>
         </member>
-        <member name="T:Norm.Commands.Qualifiers.ExistsQuallifier">
-            <summary>
-            The exists quallifier.
-            </summary>
-        </member>
-        <member name="M:Norm.Commands.Qualifiers.ExistsQuallifier.#ctor(System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Norm.Commands.Qualifiers.ExistsQuallifier"/> class.
-            </summary>
-            <param name="doesExist">The does exist.</param>
-        </member>
         <member name="T:Norm.Commands.Modifiers.AddToSetOperation`1">
             <summary>TODO::Description.</summary>
         </member>
@@ -3819,7 +3861,21 @@
             <param name="value">The value.</param>
             <returns></returns>
         </member>
+        <member name="M:Norm.Q.LessThan(System.Object)">
+            <summary>
+            Builds a $lt qualifier for the search.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
         <member name="M:Norm.Q.LessOrEqual(System.Double)">
+            <summary>
+            Builds a $lte qualifier for the search.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Norm.Q.LessOrEqual(System.Object)">
             <summary>
             Builds a $lte qualifier for the search.
             </summary>
@@ -3833,6 +3889,13 @@
             <param name="value">The value.</param>
             <returns></returns>
         </member>
+        <member name="M:Norm.Q.GreaterOrEqual(System.Object)">
+            <summary>
+            Builds a $gte qualifier for the search.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
         <member name="M:Norm.Q.GreaterThan(System.Double)">
             <summary>
             Builds a $gt qualifier for the search.
@@ -3840,7 +3903,7 @@
             <param name="value">The value.</param>
             <returns></returns>
         </member>
-        <member name="M:Norm.Q.GreaterThan(System.DateTime)">
+        <member name="M:Norm.Q.GreaterThan(System.Object)">
             <summary>
             Builds a $gt qualifier for the search.
             </summary>
@@ -4936,13 +4999,6 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Norm.MongoDiscriminatedAttribute.GetDiscriminatedAttribute(System.Type)">
-            <summary>
-            Determines whether the type given directly declares itself as saving sub-types with a discriminator
-            </summary>
-            <param name="usingType"></param>
-            <returns></returns>
-        </member>
         <member name="T:Norm.Protocol.Messages.DeleteMessage`1">
             <summary>
             The delete message.
@@ -5036,6 +5092,25 @@
         </member>
         <member name="M:Norm.Protocol.Messages.GetMoreMessage`1.Execute">
             <summary>attempt to get more results.</summary>        
+        </member>
+        <member name="T:Norm.Linq.MongoQueryExecutor">
+            <summary>
+            Executes the query against the database
+            </summary>
+        </member>
+        <member name="M:Norm.Linq.MongoQueryExecutor.#ctor(Norm.Mongo,Norm.Linq.QueryTranslationResults)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Norm.Linq.MongoQueryExecutor"/> class.
+            </summary>
+            <param name="mongo">The mongo instance</param>
+            <param name="translationResults">The results of the query translation</param>
+        </member>
+        <member name="M:Norm.Linq.MongoQueryExecutor.Execute``1">
+            <summary>
+            Performs the query against the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
         </member>
         <member name="T:Norm.BSON.MagicProperty">
             <summary>
@@ -5161,31 +5236,31 @@
             Indicates that the BSON serializer should ignore the property on which this attribute is applied.
             </summary>
         </member>
-        <member name="T:Norm.Protocol.SystemMessages.Requests.MongoIndex`1">
+        <member name="T:Norm.Protocol.SystemMessages.Requests.MongoIndex">
             <summary>
             Describes an index to insert into the db.
             </summary>
             <typeparam name="T">Collection type for indexing</typeparam>
         </member>
-        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex`1.Key">
+        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex.Key">
             <summary>
             The key.
             </summary>
             <value>The Key property gets/sets the Key data member.</value>
         </member>
-        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex`1.Namespace">
+        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex.Namespace">
             <summary>
             The namespace the index resides within.
             </summary>
             <value>The Namespace property gets/sets the Namespace data member.</value>
         </member>
-        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex`1.Unique">
+        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex.Unique">
             <summary>
             Whether or not the index is unique.
             </summary>
             <value>The Unique property gets/sets the Unique data member.</value>
         </member>
-        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex`1.Name">
+        <member name="P:Norm.Protocol.SystemMessages.Requests.MongoIndex.Name">
             <summary>
             The name of the index.
             </summary>
@@ -5210,27 +5285,6 @@
             <summary>
             The mongo query translator.
             </summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._takeCount">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._lastFlyProperty">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._lastOperator">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._sbWhere">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._sbIndexed">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._whereWritten">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="F:Norm.Linq.MongoQueryTranslator._isDeepGraphWithArrays">
-            <summary>TODO::Description.</summary>
         </member>
         <member name="M:Norm.Linq.MongoQueryTranslator.Translate(System.Linq.Expressions.Expression)">
             <summary>
@@ -5334,42 +5388,14 @@
             <param name="m">The expression.</param>
             <returns></returns>
         </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.SortFly">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.SortDescendingBy">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.AggregatePropName">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.TypeName">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.CollectionName">
-            <summary>TODO::Description.</summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.MethodCall">
-            <summary>TODO::Description.</summary>
-        </member>
         <member name="P:Norm.Linq.MongoQueryTranslator.IsComplex">
             <summary>
             Gets a value indicating whether IsComplex.
             </summary>
         </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.OptimizedWhere">
-            <summary>
-            Gets optimized where clause.
-            </summary>
-        </member>
         <member name="P:Norm.Linq.MongoQueryTranslator.ConditionalCount">
             <summary>
             Gets conditional count.
-            </summary>
-        </member>
-        <member name="P:Norm.Linq.MongoQueryTranslator.FlyWeight">
-            <summary>
-            Gets FlyWeight.
             </summary>
         </member>
         <member name="P:Norm.Linq.MongoQueryTranslator.Skip">
@@ -5528,7 +5554,7 @@
             The less or equal qualifier.
             </summary>
         </member>
-        <member name="M:Norm.Commands.Qualifiers.LessOrEqualQualifier.#ctor(System.Double)">
+        <member name="M:Norm.Commands.Qualifiers.LessOrEqualQualifier.#ctor(System.Object)">
             <summary>
             Initializes a new instance of the <see cref="T:Norm.Commands.Qualifiers.LessOrEqualQualifier"/> class.
             </summary>
@@ -5694,6 +5720,11 @@
         <member name="P:Norm.MapReduceResult`2.Value">
             <summary>
             The generic value returned from Mongo.
+            </summary>
+        </member>
+        <member name="T:Norm.Linq.QueryTranslationResults">
+            <summary>
+            Holds information gathered from the Linq Translator
             </summary>
         </member>
         <member name="T:Norm.Configuration.PropertyMappingExpression">

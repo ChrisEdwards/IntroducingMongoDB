@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoCSharpDriverDemo", "MongoCSharpDriverDemo\MongoCSharpDriverDemo.csproj", "{A3B4E04B-0E2A-40E6-8B92-1634721CE78A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoRMDriverDemo", "NoRMDriverDemo\NoRMDriverDemo.csproj", "{6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3B4E04B-0E2A-40E6-8B92-1634721CE78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3B4E04B-0E2A-40E6-8B92-1634721CE78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3B4E04B-0E2A-40E6-8B92-1634721CE78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3B4E04B-0E2A-40E6-8B92-1634721CE78A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14}.Release|Any CPU.ActiveCfg = Release|Any CPU

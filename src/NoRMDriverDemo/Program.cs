@@ -41,9 +41,108 @@ namespace NoRMDriverDemo
 			QueryUsingLinq( orderQueryable );
 			QueryAllDocuments(orderQueryable);
 
+			QueryConditionalOperators( collection );
+			QueryConditionalOperatorsUsingLinq(orderQueryable);
+
 
 			Console.WriteLine( "\n Press Enter to Exit." );
 			Console.ReadLine();
+		}
+
+
+		private static void QueryConditionalOperators( MongoCollection< Order > collection )
+		{
+			Console.WriteLine("\n\n======= Query with Conditional Operators (Using Anonymous Objects) =======");
+			var ordersWithAmountGreaterThan50 = collection.Find( new {OrderAmount = Q.GreaterThan( 50 )} );
+			var ordersWithAmountGreaterThanOEqualTo50 = collection.Find( new {OrderAmount = Q.GreaterOrEqual( 50 )} );
+			var ordersWithAmountLessThan100 = collection.Find( new {OrderAmount = Q.LessThan( 100 )} );
+			var ordersWithAmountLessThanOEqualTo100 = collection.Find( new {OrderAmount = Q.LessOrEqual( 100 )} );
+			var ordersWithAmountBetween50And200 = collection.Find( new {OrderAmount = Q.GreaterThan( 50 ).And(Q.LessThan( 200 ))} );
+			var ordersWithAmountNotEqualTo100 = collection.Find( new {OrderAmount = Q.NotEqual( 100 )} );
+			var ordersWithAmountInList = collection.Find( new {CustomerName = Q.In( "Elmer Fudd", "Daffy Duck" )} );
+
+			Console.WriteLine("\nOrders with amount greater than 50:");
+			foreach ( var order in ordersWithAmountGreaterThan50 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount greater than or equal to 50:");
+			foreach ( var order in ordersWithAmountGreaterThanOEqualTo50 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount less than 100:");
+			foreach ( var order in ordersWithAmountLessThan100 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount less than or equal to 100:");
+			foreach ( var order in ordersWithAmountLessThanOEqualTo100 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount between 50 and 200:");
+			foreach ( var order in ordersWithAmountBetween50And200 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount not equal to 100:");
+			foreach (var order in ordersWithAmountNotEqualTo100)
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount in list:");
+			foreach (var order in ordersWithAmountInList)
+				Console.WriteLine(order.ToString());
+		}
+
+
+		private static void QueryConditionalOperatorsUsingLinq(MongoQuery<Order> orders)
+		{
+			Console.WriteLine("\n\n======= Query with Conditional Operators (Using Linq) =======");
+			var ordersWithAmountGreaterThan50 = from order in orders
+			                                    where order.OrderAmount > 50
+			                                    select order;
+			var ordersWithAmountGreaterThanOEqualTo50 = from order in orders
+														where order.OrderAmount >= 50
+														select order;
+			var ordersWithAmountLessThan100 = from order in orders
+											  where order.OrderAmount < 100
+											  select order;
+			var ordersWithAmountLessThanOEqualTo100 = from order in orders
+													  where order.OrderAmount <= 100
+													  select order;
+			var ordersWithAmountBetween50And200 = from order in orders
+												  where order.OrderAmount > 50 && order.OrderAmount < 200
+												  select order;
+			var ordersWithAmountNotEqualTo100= from order in orders
+												  where order.OrderAmount != 100
+												  select order;
+			var ordersWithAmountInList = from order in orders
+			                             where new List<string> {"Elmer Fudd", "Daffy Duck"}.Contains( order.CustomerName )
+			                             select order;
+
+			Console.WriteLine("\nOrders with amount greater than 50:");
+			foreach ( var order in ordersWithAmountGreaterThan50 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount greater than or equal to 50:");
+			foreach ( var order in ordersWithAmountGreaterThanOEqualTo50 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount less than 100:");
+			foreach ( var order in ordersWithAmountLessThan100 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount less than or equal to 100:");
+			foreach ( var order in ordersWithAmountLessThanOEqualTo100 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount between 50 and 200:");
+			foreach ( var order in ordersWithAmountBetween50And200 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount not equal to 100:");
+			foreach ( var order in ordersWithAmountNotEqualTo100 )
+				Console.WriteLine(order.ToString());
+
+			Console.WriteLine("\nOrders with amount in list:");
+			foreach ( var order in ordersWithAmountInList )
+				Console.WriteLine(order.ToString());
 		}
 
 
@@ -175,10 +274,10 @@ namespace NoRMDriverDemo
 			Console.WriteLine("\n\n======= Query One Document =======");
 
 			// Create a specification to query the orders collection.
-			var spec = new {CustomerName = "Elmer Fudd"};
 
 			// Run the query.
-			Console.WriteLine(string.Format("Found: {0}", orders.FindOne(spec)));
+			Order result = orders.FindOne(new {});
+			Console.WriteLine(string.Format("Found: {0}", result));
 		}
 
 
