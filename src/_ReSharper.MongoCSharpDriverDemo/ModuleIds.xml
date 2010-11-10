@@ -1,5 +1,6 @@
 <Modules>
   <Module PersistentId="6EEBAEE4-B33E-4F41-8D7B-FAEB8850BA14" ModuleId="NoRMDriverDemo" />
   <Module PersistentId="d:Miscellaneous Files" ModuleId="Norm" />
-  <Module PersistentId="Norm, Version=1.0.0.0, Culture=neutral" ModuleId="Norm_1" />
+  <Module PersistentId="A3B4E04B-0E2A-40E6-8B92-1634721CE78A" ModuleId="MongoCSharpDriverDemo" />
+  <Module PersistentId="F6162D67-EDA3-4EDD-800B-D4EB6F8A49A0" ModuleId="SupportedMongoDbCSharpDriverDemo" />
 </Modules>

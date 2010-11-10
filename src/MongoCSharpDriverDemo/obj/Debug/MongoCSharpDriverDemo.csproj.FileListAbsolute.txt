@@ -6,3 +6,5 @@ C:\Projects\IntroducingMongoDB\src\MongoCSharpDriverDemo\bin\Debug\MongoDB.Linq.
 C:\Projects\IntroducingMongoDB\src\MongoCSharpDriverDemo\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\IntroducingMongoDB\src\MongoCSharpDriverDemo\obj\Debug\MongoCSharpDriverDemo.exe
 C:\Projects\IntroducingMongoDB\src\MongoCSharpDriverDemo\obj\Debug\MongoCSharpDriverDemo.pdb
+C:\Projects\Mine\IntroducingMongoDB\src\MongoCSharpDriverDemo\obj\Debug\MongoCSharpDriverDemo.exe
+C:\Projects\Mine\IntroducingMongoDB\src\MongoCSharpDriverDemo\obj\Debug\MongoCSharpDriverDemo.pdb

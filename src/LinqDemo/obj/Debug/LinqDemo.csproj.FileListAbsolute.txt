@@ -6,3 +6,5 @@ C:\Projects\IntroducingMongoDB\src\LinqDemo\bin\Debug\MongoDB.Linq.xml
 C:\Projects\IntroducingMongoDB\src\LinqDemo\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\IntroducingMongoDB\src\LinqDemo\obj\Debug\LinqDemo.exe
 C:\Projects\IntroducingMongoDB\src\LinqDemo\obj\Debug\LinqDemo.pdb
+C:\Projects\Mine\IntroducingMongoDB\src\LinqDemo\obj\Debug\LinqDemo.exe
+C:\Projects\Mine\IntroducingMongoDB\src\LinqDemo\obj\Debug\LinqDemo.pdb
